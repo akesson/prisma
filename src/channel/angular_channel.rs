@@ -25,7 +25,7 @@ where
     T: Angle,
 {
     /// Construct a new `AngularChannel`
-    pub fn new(val: T) -> Self {
+    pub const fn new(val: T) -> Self {
         AngularChannel(val)
     }
 }

@@ -22,6 +22,14 @@ pub struct NormalChannelTag;
 #[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct PosNormalBoundedChannel<T>(pub T);
+
+impl<T> PosNormalBoundedChannel<T> {
+    /// Construct a new `PosNormalBoundedChannel`
+    pub const fn new_const(val: T) -> Self {
+        PosNormalBoundedChannel(val)
+    }
+}
+
 /// A channel bounded between a minimum and a maximum value
 #[repr(transparent)]
 #[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
